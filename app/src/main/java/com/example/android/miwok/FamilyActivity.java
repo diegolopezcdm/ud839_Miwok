@@ -15,8 +15,21 @@
  */
 package com.example.android.miwok;
 
+import android.content.Context;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+import com.example.android.miwok.adapter.WordAdapter;
+import com.example.android.miwok.model.Word;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FamilyActivity extends AppCompatActivity {
 
@@ -24,5 +37,6 @@ public class FamilyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_family);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, new FamilyFragment()).commit();
     }
 }

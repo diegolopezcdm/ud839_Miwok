@@ -17,12 +17,20 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
+
+import com.example.android.miwok.adapter.WordAdapter;
+import com.example.android.miwok.model.Word;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PhrasesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phrases);
+        setContentView(R.layout.activity_phases);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, new PhasesFragment()).commit();
     }
 }
